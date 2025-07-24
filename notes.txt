@@ -1,0 +1,41 @@
+1. Api is application programing interface.
+2. Api is a software intermediary that allows two application to talk each other.
+ex: wheather app 
+Ex : two show app like paytm book my 
+
+3. Rest api Representiolnal state taransfer 
+REST is arcitecture, it simply provide acces to resourse and client to access and modify.
+
+Rest is part OF API .
+
+4. REST is used to create read update delete.
+
+5. Postman is use to test the api.
+
+6. Request method client => server   => http   (GET POST PUT UPDATE delete)
+
+7. Idempotent is a property of operations or API requests that ensures repeating the operation multiple times produces the same result as executing it once.
+(GET post is not idempotent);
+
+8. GET method syntax 
+ Route::get('/user', function(){
+    return "Hello user";
+});   
+
+9. post method syntax
+Route::post('/user{id}',function($id){
+    return response()->json([
+        'message' => 'User created successfully',
+        'user_id' => $id
+    ]);
+});
+
+10. put methos syntax 
+Route::put('/user{id}',function($id){
+    return response('put' . $id, 200);    
+});
+
+11. delete method syntax
+Route::delete('/user{id}',function($id){
+    return response('delete'. $id, 202);
+});
