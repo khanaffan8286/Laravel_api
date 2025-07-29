@@ -86,4 +86,4 @@ Route::delete('/user{id}',function($id){
  
  2. Dynamic Api means if user want to use my api they need to login through they credintional then the api give them access token which is valid for some hours then the access token will expire if they want to re use the api they need to re login then they can use my api.
 
-19.  
+  
