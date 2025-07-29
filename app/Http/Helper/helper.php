@@ -1,10 +1,10 @@
 <?php
 
-if (!function_exist(p)){
-    function p($data){
+if(!function_exists('p')) {
+    function p($data) {
         echo "<pre>";
         print_r($data);
         echo "</pre>";
+        
     }
 }
-

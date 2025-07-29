@@ -1,4 +1,5 @@
 1. Api is application programing interface.
+
 2. Api is a software intermediary that allows two application to talk each other.
 ex: wheather app 
 Ex : two show app like paytm book my 
@@ -39,3 +40,50 @@ Route::put('/user{id}',function($id){
 Route::delete('/user{id}',function($id){
     return response('delete'. $id, 202);
 });
+
+12. Api controller having create store show edit update delete.
+( php artisan make:controller api/controllername  --api)
+
+13. Creating Api using post method to store data in the database{
+    first validate the data that user filling data is correct or not the we start
+    DB::beginTransaction();
+            try{
+                $user =  user::create($data);
+                DB::commit();
+            }
+            catch(Exception $e){
+                p($e->getMessage());
+                $user = null;
+            }
+}
+
+14. Showing data from database through api {
+      $users = User::select('name','email')->Where('status', 1)->get();
+      User::all();
+}
+
+15. Creating a delete api {
+    define the Route
+    DB::beginTransaction;
+    user->delete();
+}
+
+16. creating PUT and PATCH api
+   1. We using PUT method to update all element 
+   for using put method first we find the id the we save the update and then commit.
+
+   2. we using PATCH method to update single entity or element 
+   For using PATCH method first we will check user exist or not then we upadate that through same procsess
+   DB::beginTransaction();
+   and then save that file  
+
+
+
+17. For checking any error is coming in the code we use this (  'error_msg'=> $err->getMessage()  )
+
+18. Authentication in Restful Api.
+ 1. static Api means the api key or access key store in the server or database that any user want to use my api they need to give the api key then they can access it's less secure any one can use if they have the key.
+ 
+ 2. Dynamic Api means if user want to use my api they need to login through they credintional then the api give them access token which is valid for some hours then the access token will expire if they want to re use the api they need to re login then they can use my api.
+
+19.  
