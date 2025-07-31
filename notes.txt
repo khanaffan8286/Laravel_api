@@ -86,4 +86,11 @@ Route::delete('/user{id}',function($id){
  
  2. Dynamic Api means if user want to use my api they need to login through they credintional then the api give them access token which is valid for some hours then the access token will expire if they want to re use the api they need to re login then they can use my api.
 
-  
+19. Razorpay gatway for first i need to key ( RAZORPAY_KEY RAZORPAY_SECRET ) i import this two key in env file 
+ then i call routes then payment page i import razorpay script code for transaction. 
+
+20. Razorpay gatway: for this first created a razorpaycontroller for this and create 3 routes for that {
+1. /razorpay for how much money you wanted to pay.
+2. /razorpay/payment for Transaction and verifaction.
+3. /payment-success to call view success page. 
+} 
