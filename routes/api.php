@@ -37,3 +37,5 @@ Route::get('/user/show/{id}', [UserController::class, 'show']);
 Route::delete('user/delete/{id}', [UserController::class, 'destroy']);
 Route::put('user/update/{id}',[UserController::class, 'update']);
 Route::patch('user/change-password/{id}', [UserController::class, 'changepassword']);
+Route::post('user/file-upload', [UserController::class, 'fileUpload']);
+Route::get('user/file-download/{filename}', [UserController::class, 'fileDownload']);

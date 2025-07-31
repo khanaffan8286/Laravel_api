@@ -61,10 +61,11 @@ class UserController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' =>Hash::make($request->password),
+                  'file' => $request->hasFile('file') ? $request->file('file')->store('attachments', 'public') : null
             ];
             DB::beginTransaction();
             try{
-                $user =  user::create($data);
+                $user =  User::create($data);
                 DB::commit();
             }
             catch(Exception $e){
@@ -245,6 +246,16 @@ class UserController extends Controller
             ], 400);
         }
     }
+}
+
+public function fileUpload(Request $req){
+
+   $result = $req->file('file')->store('attachments', 'public');
+    // User::create(['file' => $result]);
+   return response()->json([
+    'message' => 'File Uploaded successfully',
+    'file_path' => $result
+   ]);
 }
 
 }

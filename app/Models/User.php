@@ -25,7 +25,8 @@ class User extends Authenticatable
         'address',
         'contact',
         'pincode',
-        'status'
+        'status',
+        'file'
     ];
 
     /**
