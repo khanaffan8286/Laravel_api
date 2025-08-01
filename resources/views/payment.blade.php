@@ -18,14 +18,14 @@ var options = {
     "order_id": "{{ $orderId }}",
   
     "handler": function (response){
-        window.location.href = "/payment-success?order_id={{$orderId}}&payment_id=" + response.razorpay_payment_id;
+        window.location.href = "/payment-success?order_id={{$orderId}}&name={{$name}}&email={{$email}}&amount={{$amount}}&contact={{$contact}}&payment_id=" + response.razorpay_payment_id;
         // You may want to send response.razorpay_payment_id to the server via AJAX here
     },
 
     "prefill": {
-        "name": "", // optional
-        "email": "",
-        "contact": "8104564322"
+        "name": "{{$name}}", // optional
+        "email": "{{$email}}",
+        "contact": "{{$contact}}"
     },
     "notes": {
         "address": "Razorpay Corporate Office"

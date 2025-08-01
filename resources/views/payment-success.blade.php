@@ -105,8 +105,17 @@
             <span class="info-label">Payment ID:</span>
             <span>{{ $paymentId }}</span>
         </div>
+        <div class="info-box" aria-label="Customer details">
+            <span class="info-label">Name:</span>
+            <span>{{ $name }}</span>
+            <span class="info-label">Email:</span>
+            <span>{{ $email }}</span>
+            <span class="info-label">Contact:</span>
+            <span>{{ $contact }}</span>
+        </div>
+        <p class="message">You can now return to the home page or continue shopping.</p>    
 
-        <a href="{{ url('/razorpay') }}" class="btn-home" role="button">Return to Home</a>
+        <a href="{{ url('/') }}" class="btn-home" role="button">Return to Home</a>
     </div>
 </body>
 </html>
